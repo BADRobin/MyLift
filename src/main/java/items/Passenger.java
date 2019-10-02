@@ -2,16 +2,14 @@ package main.java.items;
 
 import main.java.basic.Container;
 import main.java.basic.TransportationState;
+import main.java.working.TransportTask;
 
 public class Passenger {
     private final int id;
     private final int dispatchStory;
     private final int destinationStory;
-    private TransportationTask transportationTask;
+    private TransportTask transportTask;
     private TransportationState transportationState;
-
-
-
     private Container currentContainer;
 
     public Passenger(int id, int dispatchStory, int destinationStory,  Container currentContainer) {
@@ -22,17 +20,18 @@ public class Passenger {
         transportationState = transportationState.NON_STARTED;
         this.currentContainer = currentContainer;
     }
-    public TransportationState getTransportationState{
+    public TransportationState getTransportationState(){
         return transportationState;
     }
     public void setTransportationState(TransportationState transportationState){
         this.transportationState = transportationState;
     }
-    public TransportationTask getTransportationTask() {
-        return transportationTask;
+    public TransportTask getTransportTask() {
+        return transportTask;
     }
-    public void setTransportationTask (TransportationTask transportationTask){
-        this.transportationTask = transportationTask;
+
+    public void setTransportTask (TransportTask transportTask){
+        this.transportTask = transportTask;
     }
 
     public int getId() {
@@ -59,6 +58,13 @@ public class Passenger {
                 + ", transportationState=" +transportationState + "]";
 
     }
+    @Override
+        public int hashCode(){
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + id;
+        return result;
+    }
 
     @Override
         public boolean equals(Object obj){
@@ -78,6 +84,7 @@ public class Passenger {
     public String getCurrentState(){
         return "Passenger" +id + "in" + currentContainer + "transportation state" + transportationState;
     }
+
 
 
 }

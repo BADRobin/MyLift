@@ -28,7 +28,7 @@ public class Elevator {
         this.currentStory = currentStory;
     }
 
-    public Set<Passenger> getElevatorConteiner() {
+    public Set<Passenger> getElevatorContainer() {
         return elevatorConteiner;
     }
 

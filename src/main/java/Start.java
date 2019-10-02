@@ -1,14 +1,22 @@
 package main.java;
 
-import ui.UIRunner;
 import main.java.items.Building;
-import java.items.Properties;
-import java.readers.FilePropertiesReader;
-import java.transportation.Controller;
+import main.java.items.Properties;
+import main.java.readers.FilePropertiesReader;
+import main.java.ui.UIRunner;
+import main.java.working.Controller;
 
 public class Start {
     public static void main (String [] args){
-        Properties properties = FilePropertisReader.getPropertis();
+        Properties properties = FilePropertiesReader.getProperties();
 
+
+        if (properties.getAnimationBoost() == 0) {
+            Building building = new Building(properties);
+            Controller controller = building.getController();
+            controller.run();
+        }else {
+            UIRunner.run(properties);
+        }
     }
 }
