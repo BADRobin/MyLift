@@ -88,7 +88,7 @@ public class Controller implements Runnable{
                 direction = Directions.DOWN;
             }
             try{
-                // deboading passengers from elevator
+                // deboarding passengers from elevator
                 synchronized (elevatorContainer) {
                     if(isDeboadingPassenger()){
                         elevatorContainer.notifyAll();
@@ -101,7 +101,7 @@ public class Controller implements Runnable{
                 Set<Passenger> dispatchStoryContainer =
                         building.getStoreys().get(currentStory).getDispatchStoryContainer();
 
-                // boading passengers to elevator
+                // boarding passengers to elevator
                 synchronized (dispatchStoryContainer) {
                     if(isBoadingPassenger(dispatchStoryContainer)){
                         dispatchStoryContainer.notifyAll();
@@ -146,11 +146,7 @@ public class Controller implements Runnable{
         ElevatorProtocol.LOGGER.info(Action.COMPLETION_TRANSPORTATION);
     }
 
-    /**
-     * boading passenger to elevator
-     * @param passenger
-     * @return
-     */
+
     public synchronized boolean boardingPassenger(Passenger passenger){
         if(aborted){
             return false;
@@ -187,7 +183,7 @@ public class Controller implements Runnable{
             try {
                 Thread.sleep(delay);
             } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
+
                 e.printStackTrace();
             }
             return true;

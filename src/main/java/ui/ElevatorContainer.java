@@ -12,7 +12,7 @@ import java.util.Set;
 
         public ElevatorContainer(Set<Passenger> passengers, int passengersViewNumber) {
             super(passengers);
-            // TODO Auto-generated constructor stub
+
             setMaximumSize(new Dimension(UIDimensions.PASSENGERS_CONTAINER_WIDTH * passengersViewNumber, UIDimensions.PASSENGERS_CONTAINER_HEIGHT));
             setMinimumSize(new Dimension(UIDimensions.PASSENGERS_CONTAINER_WIDTH, UIDimensions.PASSENGERS_CONTAINER_HEIGHT));
             setPreferredSize(getMaximumSize());

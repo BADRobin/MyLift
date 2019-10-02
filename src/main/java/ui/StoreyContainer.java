@@ -7,7 +7,7 @@ import java.awt.geom.Rectangle2D;
 import java.util.Set;
 
 public class StoreyContainer extends AbstractContainer{
-    private static final long serialVersionUID = -9081531667264153000L;
+    private static final long serialVersionUID = -3569533584264153000L;
 
     public StoreyContainer(Set<Passenger> passengers) {
         super(passengers);

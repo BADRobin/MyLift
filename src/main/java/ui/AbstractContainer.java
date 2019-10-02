@@ -1,20 +1,12 @@
 package main.java.ui;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import main.java.items.Passenger;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.util.Set;
 
-import javax.swing.JComponent;
 
-import main.java.items.Passenger;
-
-/**
- * Container for passengers
- * @author Yury
- *
- */
 public abstract class AbstractContainer extends JComponent {
     private static final long serialVersionUID = 1L;
     private int x = UIDimensions.FIRST_PASSENGER_MARGIN;
@@ -39,7 +31,7 @@ public abstract class AbstractContainer extends JComponent {
 
     @Override
     public void paintComponent(Graphics g) {
-        // TODO Auto-generated method stub
+
         Graphics2D graphics2d = (Graphics2D) g;
         graphics2d.setColor(Color.blue);
         x = UIDimensions.FIRST_PASSENGER_MARGIN;
@@ -56,10 +48,7 @@ public abstract class AbstractContainer extends JComponent {
 
     }
 
-    /**
-     * draw passengers container
-     * @param graphics2d
-     */
+
     protected abstract void drawContainer (Graphics2D graphics2d);
 
     private void drawPassenger(Graphics2D graphics2d, Passenger passenger){

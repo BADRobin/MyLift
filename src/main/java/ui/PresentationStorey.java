@@ -46,10 +46,7 @@ public class PresentationStorey extends JPanel {
         elevatorContainer.setPassengers(elevatorStory);
     }
 
-    /**
-     * set number of viewed passengers in elevator
-     * @param capacity
-     */
+
     public static void setPassengersViewNumber(int capacity) {
         if(capacity < PASSENGERS_VIEW_MAX){
             passengersViewNumber = capacity;

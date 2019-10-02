@@ -22,7 +22,7 @@ public class ActionButtonAppender extends WriterAppender {
 
     @Override
     public void append(LoggingEvent event) {
-        // TODO Auto-generated method stub
+
         if(Action.COMPLETION_TRANSPORTATION.toString().equals(layout.format(event).trim())){
             actionButton.setText(buttonText);
         }

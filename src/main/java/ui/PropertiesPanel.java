@@ -7,7 +7,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 public class PropertiesPanel extends JPanel implements ChangeListener{
-    private static final long serialVersionUID = -7792138540825581130L;
+    private static final long serialVersionUID = -4214926644813433707L;
+
 
     private static final int ANIMATION_BOOST_MAX = 100;
     private static final int ANIMATION_BOOST_MIN = 0;
@@ -126,7 +127,7 @@ public class PropertiesPanel extends JPanel implements ChangeListener{
 
     @Override
     public void stateChanged(ChangeEvent e) {
-        // TODO Auto-generated method stub
+
         jLabelAnimationBoost.setText(ANIMATION_BOOST_NAME + jSliderAnimationBoost.getValue());
     }
 

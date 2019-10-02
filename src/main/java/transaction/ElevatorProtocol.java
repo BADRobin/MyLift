@@ -9,8 +9,6 @@ public class ElevatorProtocol {
     static{
         PropertyConfigurator.configure(FILENAME_LOG_PROPERTIES);
     }
-    /**
-     * serves to transport logging process
-     */
+
     public static final Logger LOGGER = Logger.getRootLogger();
 }
