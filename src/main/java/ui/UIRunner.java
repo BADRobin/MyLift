@@ -123,7 +123,7 @@ public class UIRunner implements ActionListener {
 
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            // TODO Auto-generated method stub
+
                             for(Storey storey : building.getStoreys()){
                                 pStoreys[storey.getStoreyNumber()].update(storey.getDispatchStoryContainer(), storey.getArrivalStoryContainer());
                                 Elevator elevator = building.getElevator();
