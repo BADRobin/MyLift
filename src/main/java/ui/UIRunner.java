@@ -160,7 +160,7 @@ public class UIRunner implements ActionListener {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                // TODO Auto-generated method stub
+
                 new UIRunner();
             }
         });
