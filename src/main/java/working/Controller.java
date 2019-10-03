@@ -24,10 +24,7 @@ public class Controller implements Runnable{
     private final int delay;
     private volatile boolean aborted = false;
 
-    /**
-     * Create controller for building
-     * @param building
-     */
+
     public Controller(Building building) {
         super();
         this.building = building;
@@ -79,7 +76,7 @@ public class Controller implements Runnable{
             e.printStackTrace();
         }
 
-        // movement of the elevator
+        // движение лифта
         while (true){
             if (currentStory == 0){
                 direction = Directions.UP;
@@ -88,7 +85,7 @@ public class Controller implements Runnable{
                 direction = Directions.DOWN;
             }
             try{
-                // deboarding passengers from elevator
+                // выгрузка пассажиров из лифта
                 synchronized (elevatorContainer) {
                     if(isDeboadingPassenger()){
                         elevatorContainer.notifyAll();
@@ -101,7 +98,7 @@ public class Controller implements Runnable{
                 Set<Passenger> dispatchStoryContainer =
                         building.getStoreys().get(currentStory).getDispatchStoryContainer();
 
-                // boarding passengers to elevator
+                // погрузка пассажиров в лифт
                 synchronized (dispatchStoryContainer) {
                     if(isBoadingPassenger(dispatchStoryContainer)){
                         dispatchStoryContainer.notifyAll();
@@ -114,7 +111,7 @@ public class Controller implements Runnable{
                 e.printStackTrace();
             }
 
-            // ending transportation
+            // окончание движения
             if(transferPassengers == totalPassengers){
                 break;
             }
@@ -153,7 +150,7 @@ public class Controller implements Runnable{
         }
         if(passenger.getTransportTask().getDirection() == direction &&
                 elevatorContainer.size() < elevatorCapacity){
-            ElevatorProtocol.LOGGER.info(Action.BOADING_OF_PASSENGER + getLoggingMessage(passenger));
+            ElevatorProtocol.LOGGER.info(Action.BOARDING_OF_PASSENGER + getLoggingMessage(passenger));
             elevator.boardingPassenger(passenger);
             building.getStoreys().get(passenger.getDispatchStory()).boardingPassenger(passenger);
             passenger.setCurrentContainer(Container.ELEVATOR_CONTAINER);
@@ -175,7 +172,7 @@ public class Controller implements Runnable{
             return false;
         }
         if(passenger.getDestinationStory() == currentStory){
-            ElevatorProtocol.LOGGER.info(Action.DEBOADING_OF_PASSENGER + getLoggingMessage(passenger));
+            ElevatorProtocol.LOGGER.info(Action.DEBOARDING_OF_PASSENGER + getLoggingMessage(passenger));
             building.getStoreys().get(currentStory).deboardingPassenger(passenger);;
             elevator.deboardingPassenger(passenger);
             passenger.setCurrentContainer(Container.ARRIVAL_STORY_CONTAINER);
@@ -192,9 +189,7 @@ public class Controller implements Runnable{
         }
     }
 
-    /**
-     * aborting transportation process
-     */
+
     public void abortTransportation(){
         aborted = true;
         ElevatorProtocol.LOGGER.info(Action.ABORTING_TRANSPORTATION);

@@ -76,7 +76,7 @@ public class UIRunner implements ActionListener {
     @SuppressWarnings("unused")
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+
         Thread controllerThread = null;
         switch (e.getActionCommand()){
             case BUTTON_START:

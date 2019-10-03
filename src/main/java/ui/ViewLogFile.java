@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ViewLogFile extends JFrame {
-    private static final long serialVersionUID = 3157349286705659734L;
+    private static final long serialVersionUID = 3452789286707741734L;
 
     private static final String FILENAME = "elevator.log";
     private static final String TITLE = "View Log File";
