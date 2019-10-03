@@ -1,4 +1,4 @@
-storiesNumber;12
-elevatorCapacity;5
-passengersNumber;100
-animationBoost;90
+storiesNumber=10
+elevatorCapacity=5
+passengersNumber=100
+animationBoost=70

@@ -20,7 +20,7 @@ public class Controller implements Runnable{
     private final int totalStories;
     private Directions direction;
     private Set<Passenger> elevatorContainer;
-    private final int elevatorCapacity;
+    private final int elevatorCapacity =5;
     private final int delay;
     private volatile boolean aborted = false;
 
@@ -33,7 +33,7 @@ public class Controller implements Runnable{
         totalPassengers = building.getProperties().getPassengersNumber();
         totalStories = building.getStoreys().size();
         elevatorContainer = elevator.getElevatorContainer();
-        elevatorCapacity = elevator.getCapacity();
+//        elevatorCapacity = elevator.getCapacity();
         delay = building.getProperties().getDelay();
         if(new Random().nextInt(2) == 0){
             direction = Directions.UP;

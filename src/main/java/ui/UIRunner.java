@@ -39,7 +39,7 @@ public class UIRunner implements ActionListener {
         JPanel jPanelControls = new JPanel(new FlowLayout());
         jPanelControls.setPreferredSize(UIDimensions.CONTROLS_PANEL_DIMENSION);
         jPanelControls.setOpaque(true);
-        jPanelControls.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        jPanelControls.setBorder(BorderFactory.createLineBorder(Color.GREEN));
 
         Box box = Box.createVerticalBox();
 
@@ -116,7 +116,7 @@ public class UIRunner implements ActionListener {
                     presentation.setVisible(true);
                     JScrollPane presentationArea = new JScrollPane(presentation);
                     presentationArea.setPreferredSize(UIDimensions.BUILDING_PANEL_DIMENSION);
-                    presentationArea.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+                    presentationArea.setBorder(BorderFactory.createLineBorder(Color.RED));
                     presentationArea.setBackground(Color.WHITE);
                     jFrame.add(presentationArea);
                     Timer timer = new Timer(properties.getDelay(), new ActionListener() {

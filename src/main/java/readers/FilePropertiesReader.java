@@ -9,8 +9,10 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class FilePropertiesReader {
+
     private static final String FILENAME = "src/main/java/source/config.property";
-    private static final String REGEX = ";";
+    private static final String REGEX = "=";
+    
     private static final String KEY_STORIES_NUMBER = "storiesNumber";
     private static final String KEY_ELEVATOR_CAPACITY = "elevatorCapacity";
     private static final String KEY_PASSENGERS_NUMBER = "passengersNumber";

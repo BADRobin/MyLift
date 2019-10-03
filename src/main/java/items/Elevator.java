@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Elevator {
-    private final int capacity;
+    private static int capacity = 5;
     private int currentStory;
     private Set<Passenger> elevatorConteiner;
 

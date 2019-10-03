@@ -58,7 +58,7 @@ public abstract class AbstractContainer extends JComponent {
         int width = (int) Math.round(stringBounds.getWidth());
         int height = (int) Math.round(stringBounds.getHeight());
 
-        graphics2d.setColor(Color.black);
+        graphics2d.setColor(Color.darkGray);
         graphics2d.drawString(id, x + UIDimensions.PASSENGERS_MARGIN, UIDimensions.ID_Y);
         graphics2d.draw(new Rectangle2D.Double(x, UIDimensions.ID_Y - height,
                 width + 2 * UIDimensions.PASSENGERS_MARGIN, height + UIDimensions.PASSENGERS_MARGIN));
